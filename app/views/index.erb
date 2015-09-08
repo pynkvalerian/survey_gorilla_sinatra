@@ -1,11 +1,22 @@
-<h1>Deaf Aunty</h1>
+<div class="container">
+  <h1>Survey Gorilla Sinatra</h1>
+  <p>Hello, stranger!</p>
 
-<p>Say something to Aunty</p>
+  <div class='form-group'>
+  <form role='form' action='/sign_in' method='post'>
+  	<input type='text' placeholder='Email' name='email'>
+  	<input type='text' placeholder='Password' name='password'>
+  	<input type='submit' value='Sign In'>
+  </form>
+  </div>
 
-<form action="/aunty" method="post">
-  <input type="text" name="user_input">
-  <input type="submit" value="Say It!">
-</form>
+  <div class='form-group'>
+  <form role='form' action='/register' method='post'>
+    <input type='text' placeholder='Name' name='name'>
+  	<input type='text' placeholder='Email' name='email'>
+  	<input type='text' placeholder='Password' name='password'>
+  	<input type='submit' value='Register'>
+  </form>
+  </div>
 
-<p>URL parameters:</p>
-<%= params %>
+</div>

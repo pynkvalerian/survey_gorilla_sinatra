@@ -1,0 +1,53 @@
+<!-- NESTED FORMS -->
+
+<form method="post" action="/submit">
+	<div class="question-field">
+		<!-- <div id="question-1">
+		 	<div id="choice-field">
+		 		<input type="text" placeholder="Choice 1" name="choice[1][1]">
+		 		<input type="text" placeholder="Choice 1" name="choice[1][2]">
+		 	</div>
+		 	<a href="#"><button type="button"> add choices </button></a>
+		 </div> -->
+	</div>
+	<button type="button" id="add_question_button"> add question </button>
+	<input type="submit">Submit survey question</input>
+</form>
+
+<script>
+$(document).ready(function(){
+	// ADD QUESTION TO FIELD
+	$('#add_question_button').click(function(e){
+		e.preventDefault();
+		// COUNT HOW MANY QUESTIONS ADDED ALREADY
+		var totalQues = $('.question-field').children().length;
+		var newQuesNum = totalQues +1
+		$('.question-field').append('\
+			<div id="question" data-question="'+newQuesNum+'">\
+			<input type="text" placeholder="Question" name="question['+ newQuesNum +']"\
+			<div id="choice-field">\
+			</div>\
+			<a href="#"><button id="add_choices_button" type="button"> add choices </button></a>\
+			</div>\
+		');
+	});
+
+	// ADD CHOICES TO FIELD
+	$('form').on('click', '#add_choices_button', function(e){
+		e.preventDefault();
+		console.log("clicked!");
+		var questionNum = $(this).parent().data('question');
+		var choiceNum = 0
+
+
+		$('.choice-field').append('\
+			<div id="choice" data-choice="'+newChoiceNum+'">\
+			<input type="text" placeholder="Choices" name="response['+ questionNum +']['+choiceNum+']"\
+			</input>\
+			</div>\
+		')
+	});
+
+})
+</script>
+

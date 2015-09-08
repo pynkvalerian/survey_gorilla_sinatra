@@ -7,3 +7,23 @@
 th {
   text-align: left;
 }
+
+.form-group {
+  width: 250px;
+  display: inline-block;
+}
+
+#addQues {
+	margin: auto;
+	padding: 5px;
+	display: inline-block;
+	border: 1px solid #005;
+	border-radius: 4px
+}
+.removeQues {
+	margin: auto;
+	padding: 5px;
+	display: inline-block;
+	border: 1px solid #005;
+	border-radius: 4px
+}

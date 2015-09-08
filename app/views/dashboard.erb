@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Survey Gorilla Sinatra</h1>
+  <p>Hello, <%= @user.name %>!</p>
+
+  <div id="list">
+    <h4> Your surveys </h4>
+    <% @surveys.each do |survey| %>
+      <li><%= survey.title %></li>
+    <% end %>
+  </div>
+
+<!--   <button id="new_survey"> Add new survey </button>
+
+  <div class='form-group'>
+  <form role='form' action="/surveys/new" method='post'>
+    <label for="title">Title: </label>
+  	<input type='text' placeholder='Survey Title' name='title'>
+    <label for="description">Description: </label>
+    <input type='text' placeholder='Description' name='description'>
+
+    <div class="question">
+      <div id="question1">
+        <label for="ques1">Question 1: </label>
+        <input type="text" name="ques1">
+        <span class='removeQues' type='button' class="btn btn-default">Remove question</span> 
+      </div>
+    </div>
+    <p><span id="addQues" type='button' class="btn btn-default">Add question</span></p>
+
+
+  	<input type='submit' value='Create Survey'>
+  </form> 
+  </div>  -->
+
+  <form action="/surveys" method="POST">
+  Survey Title: <input type="text" name="survey"></input>
+  <br/><br/>
+  <div id="questions">
+  </div>
+  <button type="button" class="add_question">Add Question</button>
+  <br/><br/>
+  <input type="submit" value="Submit!"></input>
+</form>
+
+
+</div>
